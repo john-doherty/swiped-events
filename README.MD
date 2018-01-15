@@ -2,7 +2,7 @@
 
 [![Linked In](https://img.shields.io/badge/Linked-In-blue.svg)](https://www.linkedin.com/in/john-i-doherty) [![Twitter Follow](https://img.shields.io/twitter/follow/CambridgeMVP.svg?style=social&label=Twitter&style=plastic)](https://twitter.com/CambridgeMVP)
 
-A **0.5k** script that adds `swiped-left`, `swiped-right`, `swiped-up` and `swiped-down` events to the DOM, to ease finger swipe detection on touch devices. Based on the [StackOverflow thread](https://stackoverflow.com/questions/2264072/detect-a-finger-swipe-through-javascript-on-the-iphone-and-android)
+A **0.5k** script that adds `swiped-left`, `swiped-right`, `swiped-up` and `swiped-down` events to the DOM. Based on the StackOverflow thread [Detect a finger swipe through JavaScript on the iPhone and Android](https://stackoverflow.com/questions/2264072/detect-a-finger-swipe-through-javascript-on-the-iphone-and-android)
 
 <img src="docs/example.gif" height="349px"/>
 
@@ -14,7 +14,8 @@ Add [pure-swipe.min.js](dist/pure-swipe.min.js) to your page and start listening
 
   ```js
   document.addEventListener('swiped-left', function(e) {
-    console.log(e.target); // the element that was swiped
+    console.log(e.target); // element that was swiped
+    console.log(e.detail.distancePx); // swipe distance in pixels
   });
   ```
 
@@ -22,7 +23,8 @@ Add [pure-swipe.min.js](dist/pure-swipe.min.js) to your page and start listening
 
   ```js
   document.addEventListener('swiped-right', function(e) {
-    console.log(e.target); // the element that was swiped
+    console.log(e.target); // element that was swiped
+    console.log(e.detail.distancePx); // swipe distance in pixels
   });
   ```
 
@@ -30,7 +32,8 @@ Add [pure-swipe.min.js](dist/pure-swipe.min.js) to your page and start listening
 
   ```js
   document.addEventListener('swiped-up', function(e) {
-    console.log(e.target); // the element that was swiped
+    console.log(e.target); // element that was swiped
+    console.log(e.detail.distancePx); // swipe distance in pixels
   });
   ```
 
@@ -38,8 +41,15 @@ Add [pure-swipe.min.js](dist/pure-swipe.min.js) to your page and start listening
 
   ```js
   document.addEventListener('swiped-down', function(e) {
-    console.log(e.target); // the element that was swiped
+    console.log(e.target); // element that was swiped
+    console.log(e.detail.distancePx); // swipe distance in pixels
   });
+```
+
+You can optionally add `data-swipe-threshold="10"` attribute to any HTML element to stop swipe events from firing until the user has swiped at least `10` pixels:
+
+```html
+<div data-swipe-threshold="100">Swiper, get swiping!</div>
 ```
 
 ## Contributing

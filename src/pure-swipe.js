@@ -47,8 +47,13 @@
 
         var xDiff = xDown - xUp;
         var yDiff = yDown - yUp;
+        var distancePx = 0;
+        var swipeThreshold = parseInt(startEl.getAttribute('data-swipe-threshold') || '0', 10);
 
         var eventType = '';
+
+        // if we've not moved passed the threshold value, exit
+        if ((Math.abs(xDiff) < swipeThreshold) || (Math.abs(xDiff) < swipeThreshold)) return;
 
         if (Math.abs(xDiff) > Math.abs(yDiff)) { // most significant
             if (xDiff > 0) {
@@ -57,6 +62,7 @@
             else {
                 eventType = 'swiped-right';
             }
+            distancePx = Math.abs(xDiff);
         }
         else {
             if (yDiff > 0) {
@@ -65,11 +71,19 @@
             else {
                 eventType = 'swiped-down';
             }
+            distancePx = Math.abs(yDiff);
         }
 
         if (eventType !== '') {
 
-            startEl.dispatchEvent(new CustomEvent(eventType, { bubbles: true, cancelable: true }));
+            // fire event on the element that started the swipe
+            startEl.dispatchEvent(new CustomEvent(eventType, {
+                detail: {
+                    distancePx: parseInt(distancePx, 10) // let the user know the number of pixels swiped
+                },
+                bubbles: true,
+                cancelable: true
+            }));
 
             if (console && console.log) console.log(eventType + ' fired on ' + startEl.tagName);
         }

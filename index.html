@@ -38,6 +38,7 @@
 
                 document.addEventListener('swiped-left', function(e) {
                     console.log(e.type);
+                    console.log(e.detail);
                     console.log(e.target);
                     e.target.innerHTML = e.type;
                 });
@@ -65,6 +66,6 @@
     </head>
     <body>
         <div>Swipe me</div>
-        <div>or me</div>
+        <div data-swipe-threshold="100">or me</div>
     </body>
 </html>
