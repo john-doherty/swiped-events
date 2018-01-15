@@ -1,0 +1,5 @@
+language: node_js
+
+ci:
+    - shippable_retry npm install
+    - npm test
