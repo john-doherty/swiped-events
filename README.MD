@@ -46,11 +46,11 @@ document.addEventListener('swiped-down', function(e) {
 
 You can _optionally_ configure how [pure-swipe](https://github.com/john-doherty/pure-swipe) works using the following HTML attributes:
 
-Attribute              | Description                                                                      | Type      | Default
----------------------- | -------------------------------------------------------------------------------- | --------- | --------
-`data-swipe-threshold` | Number of *pixels* a user must swipe before it's considered a swipe              | _integer_ | 10
-`data-swipe-timeout`   | Number of *milliseconds* from touch start to touch end to be considered a swipe  | _integer_ | 1000
-`data-swipe-ignore`    | If *true*, swipe events on this element are ignored                              | _boolean_ | _false_
+Attribute              | Description                                            | Type      | Default
+---------------------- | ------------------------------------------------------ | --------- | --------
+`data-swipe-threshold` | Number of *pixels* a user must move before swipe fires | _integer_ | 10
+`data-swipe-timeout`   | Number of *milliseconds* from touchstart to touchend   | _integer_ | 1000
+`data-swipe-ignore`    | If *true*, swipe events on this element are ignored    | _boolean_ | _false_
 
 If you do not provide any attributes, it assumes the following:
 
