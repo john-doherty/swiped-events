@@ -1,5 +1,5 @@
 /*!
- * pure-swipe.js
+ * pure-swipe.js - v@version@
  * Pure JavaScript swipe events
  * https://github.com/john-doherty/pure-swipe
  * @author John Doherty <www.johndoherty.info>
