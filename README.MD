@@ -6,7 +6,9 @@ A **0.5k** script that adds `swiped-left`, `swiped-right`, `swiped-up` and `swip
 
 ## Usage
 
-Add [pure-swipe.min.js](dist/pure-swipe.min.js) to your page and start listening for swipe events. Events bubble, so you can `addEventListener` at document level, or on individual elements:
+Add [pure-swipe.min.js](dist/pure-swipe.min.js) to your page and start listening for swipe events. Events bubble, so you can `addEventListener` at document level, or on individual elements.
+
+<img src="docs/example.gif" height="698px"/>
 
 ### swiped-left
 
