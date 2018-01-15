@@ -2,6 +2,7 @@
  * pure-swipe.js - v@version@
  * Pure JavaScript swipe events
  * https://github.com/john-doherty/pure-swipe
+ * @inspiration https://stackoverflow.com/questions/16348031/disable-scrolling-when-touch-moving-certain-element
  * @author John Doherty <www.johndoherty.info>
  * @license MIT
  */
@@ -26,52 +27,47 @@
 
     document.addEventListener('touchstart', handleTouchStart, false);
     document.addEventListener('touchmove', handleTouchMove, false);
+    document.addEventListener('touchend', handleTouchEnd, false);
 
     var xDown = null;
     var yDown = null;
+    var xDiff = null;
+    var yDiff = null;
+    var timeDown = null;
     var startEl = null;
 
-    function handleTouchStart(e) {
-        xDown = e.touches[0].clientX;
-        yDown = e.touches[0].clientY;
-        startEl = e.target;
-    }
+    function handleTouchEnd(e) {
 
-    function handleTouchMove(e) {
-
-        if (!startEl || !xDown || !yDown) return;
+        // if the user released on a different target, cancel!
         if (startEl !== e.target) return;
 
-        var xUp = e.touches[0].clientX;
-        var yUp = e.touches[0].clientY;
-
-        var xDiff = xDown - xUp;
-        var yDiff = yDown - yUp;
-        var distancePx = 0;
-        var swipeThreshold = parseInt(startEl.getAttribute('data-swipe-threshold') || '0', 10);
-
+        var distancePx = 100;
+        var swipeThreshold = parseInt(startEl.getAttribute('data-swipe-threshold') || '10', 10);    // default 10px
+        var swipeTimeout = parseInt(startEl.getAttribute('data-swipe-timeout') || '1000', 10);      // default 1000ms
+        var timeDiff = Date.now() - timeDown;
         var eventType = '';
 
-        // if we've not moved passed the threshold value, exit
-        if ((Math.abs(xDiff) < swipeThreshold) || (Math.abs(xDiff) < swipeThreshold)) return;
-
         if (Math.abs(xDiff) > Math.abs(yDiff)) { // most significant
-            if (xDiff > 0) {
-                eventType = 'swiped-left';
+            if (Math.abs(xDiff) > swipeThreshold && timeDiff < swipeTimeout) {
+                if (xDiff > 0) {
+                    // console.log(xDiff, TIME_TRASHOLD, DIFF_TRASHOLD)
+                    eventType = 'swiped-left';
+                }
+                else {
+                    // console.log(xDiff)
+                    eventType = 'swiped-right';
+                }
             }
-            else {
-                eventType = 'swiped-right';
-            }
-            distancePx = Math.abs(xDiff);
         }
         else {
-            if (yDiff > 0) {
-                eventType = 'swiped-up';
+            if (Math.abs(yDiff) > swipeThreshold && timeDiff < swipeTimeout) {
+                if (yDiff > 0) {
+                    eventType = 'swiped-up';
+                }
+                else {
+                    eventType = 'swiped-down';
+                }
             }
-            else {
-                eventType = 'swiped-down';
-            }
-            distancePx = Math.abs(yDiff);
         }
 
         if (eventType !== '') {
@@ -79,7 +75,7 @@
             // fire event on the element that started the swipe
             startEl.dispatchEvent(new CustomEvent(eventType, {
                 detail: {
-                    distancePx: parseInt(distancePx, 10) // let the user know the number of pixels swiped
+                    distancePx: 100 // parseInt(distancePx, 10) // let the user know the number of pixels swiped
                 },
                 bubbles: true,
                 cancelable: true
@@ -88,10 +84,35 @@
             if (console && console.log) console.log(eventType + ' fired on ' + startEl.tagName);
         }
 
-        /* reset values */
+        // reset values
         xDown = null;
         yDown = null;
-        startEl = null;
+        timeDown = null;
+    }
+
+    function handleTouchStart(e) {
+
+        // if the element has data-swipe-ignore="true" we stop listening for swipe events
+        if (e.target.getAttribute('data-swipe-ignore') === 'true') return;
+
+        startEl = e.target;
+
+        timeDown = Date.now();
+        xDown = e.touches[0].clientX;
+        yDown = e.touches[0].clientY;
+        xDiff = 0;
+        yDiff = 0;
+    }
+
+    function handleTouchMove(e) {
+
+        if (!xDown || !yDown) return;
+
+        var xUp = e.touches[0].clientX;
+        var yUp = e.touches[0].clientY;
+
+        xDiff = xDown - xUp;
+        yDiff = yDown - yUp;
     }
 
 }(this, document));

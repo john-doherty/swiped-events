@@ -12,44 +12,50 @@ Add [pure-swipe.min.js](dist/pure-swipe.min.js) to your page and start listening
 
 ### swiped-left
 
-  ```js
-  document.addEventListener('swiped-left', function(e) {
-    console.log(e.target); // element that was swiped
-    console.log(e.detail.distancePx); // swipe distance in pixels
-  });
-  ```
-
-  ### swiped-right
-
-  ```js
-  document.addEventListener('swiped-right', function(e) {
-    console.log(e.target); // element that was swiped
-    console.log(e.detail.distancePx); // swipe distance in pixels
-  });
-  ```
-
-  ### swiped-up
-
-  ```js
-  document.addEventListener('swiped-up', function(e) {
-    console.log(e.target); // element that was swiped
-    console.log(e.detail.distancePx); // swipe distance in pixels
-  });
-  ```
-
-  ### swiped-down
-
-  ```js
-  document.addEventListener('swiped-down', function(e) {
-    console.log(e.target); // element that was swiped
-    console.log(e.detail.distancePx); // swipe distance in pixels
-  });
+```js
+document.addEventListener('swiped-left', function(e) {
+  console.log(e.target); // element that was swiped
+});
 ```
 
-You can optionally add `data-swipe-threshold="10"` attribute to any HTML element to stop swipe events from firing until the user has swiped at least `10` pixels:
+### swiped-right
+
+```js
+document.addEventListener('swiped-right', function(e) {
+    console.log(e.target); // element that was swiped
+});
+```
+
+### swiped-up
+
+```js
+document.addEventListener('swiped-up', function(e) {
+    console.log(e.target); // element that was swiped
+});
+  ```
+
+### swiped-down
+
+```js
+document.addEventListener('swiped-down', function(e) {
+    console.log(e.target); // element that was swiped
+});
+```
+
+### Configure
+
+You can _optionally_ configure how [pure-swipe](https://github.com/john-doherty/pure-swipe) works using the following HTML attributes:
+
+Attribute              | Description                                                                      | Type      | Default
+---------------------- | -------------------------------------------------------------------------------- | --------- | --------
+`data-swipe-threshold` | Number of *pixels* a user must swipe before it's considered a swipe              | _integer_ | 10
+`data-swipe-timeout`   | Number of *milliseconds* from touch start to touch end to be considered a swipe  | _integer_ | 1000
+`data-swipe-ignore`    | If *true*, swipe events on this element are ignored                              | _boolean_ | _false_
+
+If you do not provide any attributes, it assumes the following:
 
 ```html
-<div data-swipe-threshold="100">Swiper, get swiping!</div>
+<div data-swipe-threshold="10" data-swipe-timeout="1000" data-swipe-ignore="false">Swiper, get swiping!</div>
 ```
 
 ## Contributing
