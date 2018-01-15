@@ -2,10 +2,7 @@
 
 [![Linked In](https://img.shields.io/badge/Linked-In-blue.svg)](https://www.linkedin.com/in/john-i-doherty) [![Twitter Follow](https://img.shields.io/twitter/follow/CambridgeMVP.svg?style=social&label=Twitter&style=plastic)](https://twitter.com/CambridgeMVP)
 
-A **0.5k** script that adds `swiped-left`, `swiped-right`, `swiped-up` and `swiped-down` events to the DOM, to ease finger swipe detection on touch devices.
-
-Based on the conversation and code snippets from the StackOverflow post [Detect a finger swipe through JavaScript on the iPhone and Android
-](https://stackoverflow.com/questions/2264072/detect-a-finger-swipe-through-javascript-on-the-iphone-and-android)
+A **0.5k** script that adds `swiped-left`, `swiped-right`, `swiped-up` and `swiped-down` events to the DOM, to ease finger swipe detection on touch devices. Based on the [StackOverflow thread](https://stackoverflow.com/questions/2264072/detect-a-finger-swipe-through-javascript-on-the-iphone-and-android)
 
 ## Usage
 
