@@ -4,42 +4,42 @@
 
 A **0.5k** script that adds `swiped-left`, `swiped-right`, `swiped-up` and `swiped-down` events to the DOM, to ease finger swipe detection on touch devices. Based on the [StackOverflow thread](https://stackoverflow.com/questions/2264072/detect-a-finger-swipe-through-javascript-on-the-iphone-and-android)
 
+<img src="docs/example.gif" height="349px"/>
+
 ## Usage
 
 Add [pure-swipe.min.js](dist/pure-swipe.min.js) to your page and start listening for swipe events. Events bubble, so you can `addEventListener` at document level, or on individual elements.
 
-<img src="docs/example.gif" height="698px"/>
-
 ### swiped-left
 
-```js
-document.addEventListener('swiped-left', function(e) {
-  console.log(e.target); // the element that was swiped
-});
-```
+  ```js
+  document.addEventListener('swiped-left', function(e) {
+    console.log(e.target); // the element that was swiped
+  });
+  ```
 
-### swiped-right
+  ### swiped-right
 
-```js
-document.addEventListener('swiped-right', function(e) {
-  console.log(e.target); // the element that was swiped
-});
-```
+  ```js
+  document.addEventListener('swiped-right', function(e) {
+    console.log(e.target); // the element that was swiped
+  });
+  ```
 
-### swiped-up
+  ### swiped-up
 
-```js
-document.addEventListener('swiped-up', function(e) {
-  console.log(e.target); // the element that was swiped
-});
-```
+  ```js
+  document.addEventListener('swiped-up', function(e) {
+    console.log(e.target); // the element that was swiped
+  });
+  ```
 
-### swiped-down
+  ### swiped-down
 
-```js
-document.addEventListener('swiped-down', function(e) {
-  console.log(e.target); // the element that was swiped
-});
+  ```js
+  document.addEventListener('swiped-down', function(e) {
+    console.log(e.target); // the element that was swiped
+  });
 ```
 
 ## Contributing
