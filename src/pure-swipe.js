@@ -41,7 +41,6 @@
         // if the user released on a different target, cancel!
         if (startEl !== e.target) return;
 
-        var distancePx = 100;
         var swipeThreshold = parseInt(startEl.getAttribute('data-swipe-threshold') || '10', 10);    // default 10px
         var swipeTimeout = parseInt(startEl.getAttribute('data-swipe-timeout') || '1000', 10);      // default 1000ms
         var timeDiff = Date.now() - timeDown;
@@ -50,11 +49,9 @@
         if (Math.abs(xDiff) > Math.abs(yDiff)) { // most significant
             if (Math.abs(xDiff) > swipeThreshold && timeDiff < swipeTimeout) {
                 if (xDiff > 0) {
-                    // console.log(xDiff, TIME_TRASHOLD, DIFF_TRASHOLD)
                     eventType = 'swiped-left';
                 }
                 else {
-                    // console.log(xDiff)
                     eventType = 'swiped-right';
                 }
             }
@@ -73,13 +70,7 @@
         if (eventType !== '') {
 
             // fire event on the element that started the swipe
-            startEl.dispatchEvent(new CustomEvent(eventType, {
-                detail: {
-                    distancePx: 100 // parseInt(distancePx, 10) // let the user know the number of pixels swiped
-                },
-                bubbles: true,
-                cancelable: true
-            }));
+            startEl.dispatchEvent(new CustomEvent(eventType, { bubbles: true, cancelable: true }));
 
             if (console && console.log) console.log(eventType + ' fired on ' + startEl.tagName);
         }
