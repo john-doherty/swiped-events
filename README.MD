@@ -48,15 +48,15 @@ You can _optionally_ configure how [pure-swipe](https://github.com/john-doherty/
 
 Attribute              | Description                                            | Type      | Default
 ---------------------- | ------------------------------------------------------ | --------- | --------
-`data-swipe-threshold` | Number of *pixels* a user must move before swipe fires | _integer_ | 10
-`data-swipe-timeout`   | Number of *milliseconds* from touchstart to touchend   | _integer_ | 1000
+`data-swipe-threshold` | Number of *pixels* a user must move before swipe fires | _integer_ | 20
+`data-swipe-timeout`   | Number of *milliseconds* from touchstart to touchend   | _integer_ | 500
 `data-swipe-ignore`    | If *true*, swipe events on this element are ignored    | _boolean_ | _false_
 
 If you do not provide any attributes, it assumes the following:
 
 ```html
-<div data-swipe-threshold="10"
-     data-swipe-timeout="1000"
+<div data-swipe-threshold="20"
+     data-swipe-timeout="500"
      data-swipe-ignore="false">
      Swiper, get swiping!
 </div>
