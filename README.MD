@@ -55,7 +55,11 @@ Attribute              | Description                                            
 If you do not provide any attributes, it assumes the following:
 
 ```html
-<div data-swipe-threshold="10" data-swipe-timeout="1000" data-swipe-ignore="false">Swiper, get swiping!</div>
+<div data-swipe-threshold="10"
+     data-swipe-timeout="1000"
+     data-swipe-ignore="false">
+     Swiper, get swiping!
+</div>
 ```
 
 ## Contributing
