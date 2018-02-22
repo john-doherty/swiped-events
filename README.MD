@@ -78,7 +78,7 @@ _You can test on a desktop using [Device Mode](https://developers.google.com/web
 
 ```bash
 git clone https://github.com/john-doherty/pure-swipe
-cd long-press
+cd pure-swipe
 npm install
 npm start
 ```
