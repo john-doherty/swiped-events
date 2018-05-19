@@ -106,4 +106,4 @@
         yDiff = yDown - yUp;
     }
 
-}(this, document));
+}(window, document));
