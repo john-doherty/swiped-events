@@ -1,6 +1,6 @@
 {
   "name": "pure-swipe",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "A 0.7k script that adds swipe events to the DOM for touch enabled devices",
   "main": "src/pure-swipe.js",
   "scripts": {
@@ -30,7 +30,8 @@
     "gulp": "3.9.1",
     "gulp-minify": "1.0.0",
     "gulp-string-replace": "^0.4.0",
-    "run-sequence": "1.2.2"
+    "run-sequence": "1.2.2",
+    "gulp-sizereport": "^1.2.0"
   },
   "eslintConfig": {
     "extends": "airbnb-base",
@@ -143,8 +144,5 @@
         "error"
       ]
     }
-  },
-  "dependencies": {
-    "gulp-sizereport": "^1.2.0"
   }
 }
