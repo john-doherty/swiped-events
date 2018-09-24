@@ -1,6 +1,6 @@
 {
   "name": "pure-swipe",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "A 0.7k script that adds swipe events to the DOM for touch enabled devices",
   "main": "src/pure-swipe.js",
   "scripts": {

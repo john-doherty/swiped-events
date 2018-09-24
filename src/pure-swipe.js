@@ -72,7 +72,7 @@
             // fire event on the element that started the swipe
             startEl.dispatchEvent(new CustomEvent(eventType, { bubbles: true, cancelable: true }));
 
-            if (console && console.log) console.log(eventType + ' fired on ' + startEl.tagName);
+            // if (console && console.log) console.log(eventType + ' fired on ' + startEl.tagName);
         }
 
         // reset values
