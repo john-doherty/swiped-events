@@ -1,6 +1,6 @@
 {
   "name": "swiped-events",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "A 0.7k script that adds swipe events to the DOM for touch enabled devices",
   "main": "src/swiped-events.js",
   "scripts": {
