@@ -11,7 +11,7 @@
     'use strict';
 
     // patch CustomEvent to allow constructor creation (IE/Chrome)
-    if (typeof window.CustomEvent !== "function" ) {
+    if (typeof window.CustomEvent !== 'function') {
 
         window.CustomEvent = function (event, params) {
 

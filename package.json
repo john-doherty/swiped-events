@@ -1,6 +1,6 @@
 {
   "name": "swiped-events",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "A 0.7k script that adds swipe events to the DOM for touch enabled devices",
   "main": "src/swiped-events.js",
   "scripts": {
@@ -17,7 +17,8 @@
   },
   "keywords": [
     "swipe",
-    "touch"
+    "touch",
+    "swiped events"
   ],
   "author": "John Doherty <contact@johndoherty.info> (www.johndoherty.info)",
   "license": "MIT",
