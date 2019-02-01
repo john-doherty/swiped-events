@@ -1,4 +1,4 @@
-# pure-swipe
+# swiped-events
 
 [![Linked In](https://img.shields.io/badge/Linked-In-blue.svg)](https://www.linkedin.com/in/john-i-doherty) [![Twitter Follow](https://img.shields.io/twitter/follow/mrjohndoherty.svg?style=social&label=Twitter&style=plastic)](https://twitter.com/mrjohndoherty)
 
@@ -8,7 +8,7 @@ A **0.7k** script that adds `swiped-left`, `swiped-right`, `swiped-up` and `swip
 
 ## Usage
 
-Add [pure-swipe.min.js](dist/pure-swipe.min.js) to your page and start listening for swipe events. Events bubble, so you can `addEventListener` at document level, or on individual elements.
+Add [swiped-events.min.js](dist/swiped-events.min.js) to your page and start listening for swipe events. Events bubble, so you can `addEventListener` at document level, or on individual elements.
 
 ### swiped-left
 
@@ -44,7 +44,7 @@ document.addEventListener('swiped-down', function(e) {
 
 ### Configure
 
-You can _optionally_ configure how [pure-swipe](https://github.com/john-doherty/pure-swipe) works using the following HTML attributes:
+You can _optionally_ configure how [swiped-events](https://github.com/john-doherty/swiped-events) works using the following HTML attributes:
 
 Attribute              | Description                                            | Type      | Default
 ---------------------- | ------------------------------------------------------ | --------- | --------
@@ -77,15 +77,15 @@ The project includes everything needed to tweak, including a node webserver. Run
 _You can test on a desktop using [Device Mode](https://developers.google.com/web/tools/chrome-devtools/device-mode/) in Google Chrome._
 
 ```bash
-git clone https://github.com/john-doherty/pure-swipe
-cd pure-swipe
+git clone https://github.com/john-doherty/swiped-events
+cd swiped-events
 npm install
 npm start
 ```
 
 ### Update .min files
 
-To create a new version of the minified [pure-swipe.min.js](dist/pure-swipe.min.js) file from source, tweak the version number in `package.json` and run the following:
+To create a new version of the minified [swiped-events.min.js](dist/swiped-events.min.js) file from source, tweak the version number in `package.json` and run the following:
 
 ```bash
 npm run build
@@ -97,7 +97,7 @@ If you find this useful, please star the repo. It helps me priorities which open
 
 ## History
 
-For change-log, check [releases](https://github.com/john-doherty/pure-swipe/releases).
+For change-log, check [releases](https://github.com/john-doherty/swiped-events/releases).
 
 ## License
 
