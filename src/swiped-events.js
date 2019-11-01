@@ -41,8 +41,17 @@
         // if the user released on a different target, cancel!
         if (startEl !== e.target) return;
 
-        var swipeThreshold = parseInt(startEl.getAttribute('data-swipe-threshold') || '20', 10);    // default 10px
-        var swipeTimeout = parseInt(startEl.getAttribute('data-swipe-timeout') || '500', 10);      // default 1000ms
+        var swipeThreshold = parseInt(
+          startEl.getAttribute('data-swipe-threshold')
+          || e.currentTarget.getAttribute && e.currentTarget.getAttribute('data-swipe-threshold')
+          || e.currentTarget['swipe-threshold']
+          || '20', 10);
+
+        var swipeTimeout = parseInt(startEl.getAttribute('data-swipe-timeout')
+          || e.currentTarget.getAttribute && e.currentTarget.getAttribute('data-swipe-timeout')
+          || e.currentTarget['swipe-timeout']
+          || '500', 10);
+
         var timeDiff = Date.now() - timeDown;
         var eventType = '';
 
@@ -84,7 +93,11 @@
     function handleTouchStart(e) {
 
         // if the element has data-swipe-ignore="true" we stop listening for swipe events
-        if (e.target.getAttribute('data-swipe-ignore') === 'true') return;
+        if (
+          e.target.getAttribute('data-swipe-ignore') === 'true'
+          || e.currentTarget.getAttribute && e.currentTarget.getAttribute('data-swipe-ignore')
+          || e.currentTarget['swipe-ignore']
+        ) return;
 
         startEl = e.target;
 

@@ -62,6 +62,16 @@ If you do not provide any attributes, it assumes the following:
 </div>
 ```
 
+Additionally you can override default values for elements with attached listeners and theirs children:
+```html
+<script>
+document['swipe-threshold'] = 200 //Override
+document.addEventListener('swiped-down', function(e) {
+    console.log(e.target); // element that was swiped
+});
+</script>
+```
+
 ## Contributing
 
 1. Fork it!
