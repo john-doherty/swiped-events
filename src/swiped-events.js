@@ -6,6 +6,10 @@
  * @author John Doherty <www.johndoherty.info>
  * @license MIT
  */
+
+SwipedEvents.swipeThreshold = '20'; // 20px
+SwipedEvents.swipeTimeout = '500'; // 500ms
+
 (function (window, document) {
 
     'use strict';
@@ -41,8 +45,8 @@
         // if the user released on a different target, cancel!
         if (startEl !== e.target) return;
 
-        var swipeThreshold = parseInt(startEl.getAttribute('data-swipe-threshold') || '20', 10);    // default 10px
-        var swipeTimeout = parseInt(startEl.getAttribute('data-swipe-timeout') || '500', 10);      // default 1000ms
+        var swipeThreshold = parseInt(startEl.getAttribute('data-swipe-threshold') || SwipedEvents.swipeThreshold, 10);
+        var swipeTimeout = parseInt(startEl.getAttribute('data-swipe-timeout') || SwipedEvents.swipeTimeout, 10);
         var timeDiff = Date.now() - timeDown;
         var eventType = '';
 
