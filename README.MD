@@ -1,7 +1,5 @@
 # swiped-events
 
-[![Linked In](https://img.shields.io/badge/Linked-In-blue.svg)](https://www.linkedin.com/in/john-i-doherty) [![Twitter Follow](https://img.shields.io/twitter/follow/mrjohndoherty.svg?style=social&label=Twitter&style=plastic)](https://twitter.com/mrjohndoherty)
-
 A **0.7k** script that adds `swiped-left`, `swiped-right`, `swiped-up` and `swiped-down` events to the DOM using [CustomEvent](https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent/CustomEvent) and pure JS. Based on the StackOverflow thread [Detect a finger swipe through JavaScript on the iPhone and Android](https://stackoverflow.com/questions/2264072/detect-a-finger-swipe-through-javascript-on-the-iphone-and-android)
 
 <img src="docs/example.gif" height="349px"/>
@@ -101,4 +99,4 @@ For change-log, check [releases](https://github.com/john-doherty/swiped-events/r
 
 ## License
 
-Licensed under [MIT License](LICENSE) &copy; [John Doherty](http://www.johndoherty.info)
+Licensed under [MIT License](LICENSE) &copy; [John Doherty](https://twitter.com/mrjohndoherty)

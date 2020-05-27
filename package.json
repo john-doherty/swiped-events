@@ -1,6 +1,6 @@
 {
   "name": "swiped-events",
-  "version": "1.0.9",
+  "version": "1.1.0",
   "description": "A 0.7k script that adds swipe events to the DOM for touch enabled devices",
   "main": "src/swiped-events.js",
   "scripts": {
@@ -23,16 +23,16 @@
   "author": "John Doherty <contact@johndoherty.info> (www.johndoherty.info)",
   "license": "MIT",
   "devDependencies": {
-    "del": "2.2.2",
+    "del": "^5.1.0",
     "eslint": "^3.19.0",
     "eslint-config-airbnb-base": "^11.2.0",
     "eslint-plugin-import": "^2.2.0",
     "express": "^4.15.3",
-    "gulp": "3.9.1",
-    "gulp-minify": "1.0.0",
-    "gulp-string-replace": "^0.4.0",
-    "run-sequence": "1.2.2",
-    "gulp-sizereport": "^1.2.0"
+    "gulp": "^4.0.2",
+    "gulp-minify": "^3.1.0",
+    "gulp-sizereport": "^1.2.1",
+    "gulp-string-replace": "^1.1.2",
+    "gulp4-run-sequence": "^1.0.1"
   },
   "eslintConfig": {
     "extends": "airbnb-base",
@@ -145,5 +145,8 @@
         "error"
       ]
     }
+  },
+  "dependencies": {
+    "natives": "^1.1.6"
   }
 }
