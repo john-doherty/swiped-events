@@ -44,33 +44,34 @@
         var swipeThreshold = parseInt(startEl.getAttribute('data-swipe-threshold') || '20', 10);    // default 10px
         var swipeTimeout = parseInt(startEl.getAttribute('data-swipe-timeout') || '500', 10);      // default 1000ms
         var timeDiff = Date.now() - timeDown;
-        var eventType = '';
+        var eventType = 'swiped';
+        var direction = '';
 
         if (Math.abs(xDiff) > Math.abs(yDiff)) { // most significant
             if (Math.abs(xDiff) > swipeThreshold && timeDiff < swipeTimeout) {
                 if (xDiff > 0) {
-                    eventType = 'swiped-left';
+                    direction = 'left';
                 }
                 else {
-                    eventType = 'swiped-right';
+                    direction = 'right';
                 }
             }
         }
         else {
             if (Math.abs(yDiff) > swipeThreshold && timeDiff < swipeTimeout) {
                 if (yDiff > 0) {
-                    eventType = 'swiped-up';
+                    direction = 'up';
                 }
                 else {
-                    eventType = 'swiped-down';
+                    direction = 'down';
                 }
             }
         }
 
-        if (eventType !== '') {
+        if (direction !== '') {
 
             // fire event on the element that started the swipe
-            startEl.dispatchEvent(new CustomEvent(eventType, { bubbles: true, cancelable: true }));
+            startEl.dispatchEvent(new CustomEvent(eventType, { detail: direction, bubbles: true, cancelable: true }));
 
             // if (console && console.log) console.log(eventType + ' fired on ' + startEl.tagName);
         }

@@ -35,29 +35,12 @@
         <script>
 
             window.onload = function() {
-
-                document.addEventListener('swiped-left', function(e) {
+                document.addEventListener('swiped', function(e) {
                     console.log(e.type);
                     console.log(e.target);
-                    e.target.innerHTML = e.type;
-                });
+                    console.log(e.detail);
 
-                document.addEventListener('swiped-right', function(e) {
-                    console.log(e.type);
-                    console.log(e.target);
-                    e.target.innerHTML = e.type;
-                });
-
-                document.addEventListener('swiped-up', function(e) {
-                    console.log(e.type);
-                    console.log(e.target);
-                    e.target.innerHTML = e.type;
-                });
-
-                document.addEventListener('swiped-down', function(e) {
-                    console.log(e.type);
-                    console.log(e.target);
-                    e.target.innerHTML = e.type;
+                    e.target.innerHTML = e.detail;
                 });
 
             }
