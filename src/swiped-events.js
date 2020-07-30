@@ -69,8 +69,17 @@
 
         if (eventType !== '') {
 
+            // create event for the element that started the swipe and add useful position data
+            let returnedEvent = new CustomEvent(eventType, { bubbles: true, cancelable: true});
+            returnedEvent.touchDetails = {
+                'xSwipeStart':xDown,
+                'ySwipeStart':yDown,
+                'xSwipeEnd':e.changedTouches[0].clientX,
+                'ySwipeEnd':e.changedTouches[0].clientY
+            };
+
             // fire event on the element that started the swipe
-            startEl.dispatchEvent(new CustomEvent(eventType, { bubbles: true, cancelable: true }));
+            startEl.dispatchEvent(returnedEvent);
 
             // if (console && console.log) console.log(eventType + ' fired on ' + startEl.tagName);
         }

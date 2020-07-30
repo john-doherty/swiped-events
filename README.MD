@@ -30,7 +30,7 @@ document.addEventListener('swiped-right', function(e) {
 document.addEventListener('swiped-up', function(e) {
     console.log(e.target); // element that was swiped
 });
-  ```
+```
 
 ### swiped-down
 
@@ -39,6 +39,17 @@ document.addEventListener('swiped-down', function(e) {
     console.log(e.target); // element that was swiped
 });
 ```
+
+### Event data
+The event (e) has an attribute "touchDetails" that contains the coordinates where the touch started and ended.
+
+Example of "touchDetails" attribute obtained from the Firefox debugger:
+
+```js
+Object { xSwipeStart: 42, ySwipeStart: 126, xSwipeEnd: 174, ySwipeEnd: 234 }
+```
+
+
 
 ### Configure
 
