@@ -73,6 +73,15 @@ If you do not provide any attributes, it assumes the following:
 </div>
 ```
 
+To set defaults application wide, set config attributes on a parent/topmost element:
+
+```html
+<body data-swipe-threshold="100" data-swipe-timeout="250">
+    <div>Swipe me</div>
+    <div>or me</div>
+</body>
+```
+
 ## Contributing
 
 1. Fork it!

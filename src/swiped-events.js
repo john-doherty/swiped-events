@@ -46,8 +46,8 @@
         // if the user released on a different target, cancel!
         if (startEl !== e.target) return;
 
-        var swipeThreshold = parseInt(startEl.getAttribute('data-swipe-threshold') || '20', 10); // default 20px
-        var swipeTimeout = parseInt(startEl.getAttribute('data-swipe-timeout') || '500', 10);    // default 500ms
+        var swipeThreshold = parseInt(getNearestAttribute(startEl, 'data-swipe-threshold', '20'), 10); // default 20px
+        var swipeTimeout = parseInt(getNearestAttribute(startEl, 'data-swipe-timeout', '500'), 10);    // default 500ms
         var timeDiff = Date.now() - timeDown;
         var eventType = '';
         var changedTouches = e.changedTouches || e.touches || [];
@@ -127,6 +127,30 @@
 
         xDiff = xDown - xUp;
         yDiff = yDown - yUp;
+    }
+
+    /**
+     * Gets attribute off HTML element or nearest parent
+     * @param {object} el - HTML element to retrieve attribute from
+     * @param {string} attributeName - name of the attribute
+     * @param {any} defaultValue - default value to return if no match found
+     * @returns {any} attribute value or defaultValue
+     */
+    function getNearestAttribute(el, attributeName, defaultValue) {
+
+        // walk up the dom tree looking for data-action and data-trigger
+        while (el && el !== document.documentElement) {
+
+            var attributeValue = el.getAttribute(attributeName);
+
+            if (attributeValue) {
+                return attributeValue;
+            }
+
+            el = el.parentNode;
+        }
+
+        return defaultValue;
     }
 
 }(window, document));
