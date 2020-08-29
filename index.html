@@ -36,6 +36,14 @@
 
             window.onload = function() {
 
+                document.addEventListener('swiped', function(e) {
+                    console.log(e.type);
+                    console.log(e.target);
+                    console.log(e.detail);
+                    console.log(e.dir);
+                    e.target.innerHTML = e.type;
+                });
+
                 document.addEventListener('swiped-left', function(e) {
                     console.log(e.type);
                     console.log(e.target);

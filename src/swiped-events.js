@@ -81,10 +81,11 @@
                 yEnd: parseInt((changedTouches[0] || {}).clientY || -1, 10)
             };
 
-            // fire event on the element that started the swipe
-            startEl.dispatchEvent(new CustomEvent(eventType, { bubbles: true, cancelable: true, detail: eventData }));
+            // fire `swiped` event event on the element that started the swipe
+            startEl.dispatchEvent(new CustomEvent('swiped', { bubbles: true, cancelable: true, detail: eventData }));
 
-            // if (console && console.log) console.log(eventType + ' fired on ' + startEl.tagName);
+            // fire `swiped-dir` event on the element that started the swipe
+            startEl.dispatchEvent(new CustomEvent(eventType, { bubbles: true, cancelable: true, detail: eventData }));
         }
 
         // reset values

@@ -44,6 +44,16 @@ document.addEventListener('swiped-down', function(e) {
 });
 ```
 
+### swiped
+
+```js
+document.addEventListener('swiped', function(e) {
+  console.log(e.target); // element that was swiped
+  console.log(e.detail); // event data { dir: 'down', xStart: 196, xEnd: 230, yStart: 196, yEnd: 4 }
+  console.log(e.detail.dir); // swipe direction
+});
+```
+
 ### Configure
 
 You can _optionally_ configure how [swiped-events](https://github.com/john-doherty/swiped-events) works using the following HTML attributes:
