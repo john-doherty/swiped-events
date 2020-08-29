@@ -74,7 +74,7 @@
         if (eventType !== '') {
 
             var eventData = {
-                direction: eventType.replace(/swiped-/, ''),
+                dir: eventType.replace(/swiped-/, ''),
                 xStart: parseInt(xDown, 10),
                 xEnd: parseInt((changedTouches[0] || {}).clientX || -1, 10),
                 yStart: parseInt(yDown, 10),

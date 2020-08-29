@@ -13,7 +13,7 @@ Add [swiped-events.min.js](dist/swiped-events.min.js) to your page and start lis
 ```js
 document.addEventListener('swiped-left', function(e) {
   console.log(e.target); // element that was swiped
-  console.log(e.detail); // event data { direction: 'left', xStart: 196, xEnd: 230, yStart: 196, yEnd: 4 }
+  console.log(e.detail); // event data { dir: 'left', xStart: 196, xEnd: 230, yStart: 196, yEnd: 4 }
 });
 ```
 
@@ -22,7 +22,7 @@ document.addEventListener('swiped-left', function(e) {
 ```js
 document.addEventListener('swiped-right', function(e) {
   console.log(e.target); // element that was swiped
-  console.log(e.detail); // event data { direction: 'right', xStart: 196, xEnd: 230, yStart: 196, yEnd: 4 }
+  console.log(e.detail); // event data { dir: 'right', xStart: 196, xEnd: 230, yStart: 196, yEnd: 4 }
 });
 ```
 
@@ -31,7 +31,7 @@ document.addEventListener('swiped-right', function(e) {
 ```js
 document.addEventListener('swiped-up', function(e) {
   console.log(e.target); // element that was swiped
-  console.log(e.detail); // event data { direction: 'up', xStart: 196, xEnd: 230, yStart: 196, yEnd: 4 }
+  console.log(e.detail); // event data { dir: 'up', xStart: 196, xEnd: 230, yStart: 196, yEnd: 4 }
 });
   ```
 
@@ -40,7 +40,7 @@ document.addEventListener('swiped-up', function(e) {
 ```js
 document.addEventListener('swiped-down', function(e) {
   console.log(e.target); // element that was swiped
-  console.log(e.detail); // event data { direction: 'down', xStart: 196, xEnd: 230, yStart: 196, yEnd: 4 }
+  console.log(e.detail); // event data { dir: 'down', xStart: 196, xEnd: 230, yStart: 196, yEnd: 4 }
 });
 ```
 
