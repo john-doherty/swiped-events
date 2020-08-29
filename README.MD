@@ -8,6 +8,15 @@ A **0.7k** script that adds `swiped-left`, `swiped-right`, `swiped-up` and `swip
 
 Add [swiped-events.min.js](dist/swiped-events.min.js) to your page and start listening for swipe events. Events bubble, so you can `addEventListener` at document level, or on individual elements.
 
+### swiped
+
+```js
+document.addEventListener('swiped', function(e) {
+  console.log(e.target); // element that was swiped
+  console.log(e.detail.dir); // swipe direction
+});
+```
+
 ### swiped-left
 
 ```js
@@ -41,16 +50,6 @@ document.addEventListener('swiped-up', function(e) {
 document.addEventListener('swiped-down', function(e) {
   console.log(e.target); // element that was swiped
   console.log(e.detail); // event data { dir: 'down', xStart: 196, xEnd: 230, yStart: 196, yEnd: 4 }
-});
-```
-
-### swiped
-
-```js
-document.addEventListener('swiped', function(e) {
-  console.log(e.target); // element that was swiped
-  console.log(e.detail); // event data { dir: 'down', xStart: 196, xEnd: 230, yStart: 196, yEnd: 4 }
-  console.log(e.detail.dir); // swipe direction
 });
 ```
 
