@@ -50,6 +50,7 @@
         var swipeTimeout = parseInt(startEl.getAttribute('data-swipe-timeout') || '500', 10);    // default 500ms
         var timeDiff = Date.now() - timeDown;
         var eventType = '';
+        var changedTouches = e.changedTouches || e.touches || [];
 
         if (Math.abs(xDiff) > Math.abs(yDiff)) { // most significant
             if (Math.abs(xDiff) > swipeThreshold && timeDiff < swipeTimeout) {
@@ -72,8 +73,16 @@
 
         if (eventType !== '') {
 
+            var eventData = {
+                direction: eventType.replace(/swiped-/, ''),
+                xStart: parseInt(xDown, 10),
+                xEnd: parseInt((changedTouches[0] || {}).clientX || -1, 10),
+                yStart: parseInt(yDown, 10),
+                yEnd: parseInt((changedTouches[0] || {}).clientY || -1, 10)
+            };
+
             // fire event on the element that started the swipe
-            startEl.dispatchEvent(new CustomEvent(eventType, { bubbles: true, cancelable: true }));
+            startEl.dispatchEvent(new CustomEvent(eventType, { bubbles: true, cancelable: true, detail: eventData }));
 
             // if (console && console.log) console.log(eventType + ' fired on ' + startEl.tagName);
         }

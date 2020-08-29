@@ -13,6 +13,7 @@ Add [swiped-events.min.js](dist/swiped-events.min.js) to your page and start lis
 ```js
 document.addEventListener('swiped-left', function(e) {
   console.log(e.target); // element that was swiped
+  console.log(e.detail); // event data { direction: 'left', xStart: 196, xEnd: 230, yStart: 196, yEnd: 4 }
 });
 ```
 
@@ -20,7 +21,8 @@ document.addEventListener('swiped-left', function(e) {
 
 ```js
 document.addEventListener('swiped-right', function(e) {
-    console.log(e.target); // element that was swiped
+  console.log(e.target); // element that was swiped
+  console.log(e.detail); // event data { direction: 'right', xStart: 196, xEnd: 230, yStart: 196, yEnd: 4 }
 });
 ```
 
@@ -28,7 +30,8 @@ document.addEventListener('swiped-right', function(e) {
 
 ```js
 document.addEventListener('swiped-up', function(e) {
-    console.log(e.target); // element that was swiped
+  console.log(e.target); // element that was swiped
+  console.log(e.detail); // event data { direction: 'up', xStart: 196, xEnd: 230, yStart: 196, yEnd: 4 }
 });
   ```
 
@@ -36,7 +39,8 @@ document.addEventListener('swiped-up', function(e) {
 
 ```js
 document.addEventListener('swiped-down', function(e) {
-    console.log(e.target); // element that was swiped
+  console.log(e.target); // element that was swiped
+  console.log(e.detail); // event data { direction: 'down', xStart: 196, xEnd: 230, yStart: 196, yEnd: 4 }
 });
 ```
 
@@ -44,11 +48,11 @@ document.addEventListener('swiped-down', function(e) {
 
 You can _optionally_ configure how [swiped-events](https://github.com/john-doherty/swiped-events) works using the following HTML attributes:
 
-Attribute              | Description                                            | Type      | Default
----------------------- | ------------------------------------------------------ | --------- | --------
-`data-swipe-threshold` | Number of *pixels* a user must move before swipe fires | _integer_ | 20
-`data-swipe-timeout`   | Number of *milliseconds* from touchstart to touchend   | _integer_ | 500
-`data-swipe-ignore`    | If *true*, swipe events on this element are ignored    | _boolean_ | _false_
+Attribute              | Description                                              | Type      | Default
+---------------------- | -------------------------------------------------------- | --------- | --------
+`data-swipe-threshold` | Number of *pixels* a user must move before swipe fires   | _integer_ | 20
+`data-swipe-timeout`   | Number of *milliseconds* from `touchstart` to `touchend` | _integer_ | 500
+`data-swipe-ignore`    | If *true*, swipe events on this element are ignored      | _boolean_ | _false_
 
 If you do not provide any attributes, it assumes the following:
 
@@ -91,7 +95,7 @@ npm run build
 
 ## Star the repo
 
-If you find this useful, please star the repo. It helps me priorities which open source projects issues I should tackle first.
+If you find this useful, please star the repo. It helps me priorities which OSS issues to tackle first 🙌
 
 ## History
 
