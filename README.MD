@@ -1,5 +1,7 @@
 # swiped-events
 
+[![npm](https://img.shields.io/npm/dt/swiped-events)](https://www.npmjs.com/package/swiped-events)
+
 A **0.7k** script that adds `swiped-left`, `swiped-right`, `swiped-up` and `swiped-down` events to the DOM using [CustomEvent](https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent/CustomEvent) and pure JS. Based on the StackOverflow thread [Detect a finger swipe through JavaScript on the iPhone and Android](https://stackoverflow.com/questions/2264072/detect-a-finger-swipe-through-javascript-on-the-iphone-and-android)
 
 <img src="docs/example.gif" height="349px"/>
