@@ -15,6 +15,7 @@ Add [swiped-events.min.js](dist/swiped-events.min.js) to your page and start lis
 ```js
 document.addEventListener('swiped', function(e) {
   console.log(e.target); // element that was swiped
+  console.log(e.detail); // see event data below
   console.log(e.detail.dir); // swipe direction
 });
 ```
@@ -24,7 +25,7 @@ document.addEventListener('swiped', function(e) {
 ```js
 document.addEventListener('swiped-left', function(e) {
   console.log(e.target); // element that was swiped
-  console.log(e.detail); // event data { dir: 'left', xStart: 196, xEnd: 230, yStart: 196, yEnd: 4 }
+  console.log(e.detail); // see event data below
 });
 ```
 
@@ -33,7 +34,7 @@ document.addEventListener('swiped-left', function(e) {
 ```js
 document.addEventListener('swiped-right', function(e) {
   console.log(e.target); // element that was swiped
-  console.log(e.detail); // event data { dir: 'right', xStart: 196, xEnd: 230, yStart: 196, yEnd: 4 }
+  console.log(e.detail); // see event data below
 });
 ```
 
@@ -42,7 +43,7 @@ document.addEventListener('swiped-right', function(e) {
 ```js
 document.addEventListener('swiped-up', function(e) {
   console.log(e.target); // element that was swiped
-  console.log(e.detail); // event data { dir: 'up', xStart: 196, xEnd: 230, yStart: 196, yEnd: 4 }
+  console.log(e.detail); // see event data below
 });
   ```
 
@@ -51,8 +52,23 @@ document.addEventListener('swiped-up', function(e) {
 ```js
 document.addEventListener('swiped-down', function(e) {
   console.log(e.target); // element that was swiped
-  console.log(e.detail); // event data { dir: 'down', xStart: 196, xEnd: 230, yStart: 196, yEnd: 4 }
+  console.log(e.detail); // see event data below
 });
+```
+
+### event data
+
+The following event data is included with every event and accessible via `e.detail`
+
+```js
+{
+  dir: 'up',            // swipe direction (up,down,left,right)
+  touchType: 'direct',  // touch type (stylus,direct) on iOS stylus=apple pencil and direct=finger
+  xStart: 196,          // x coords of swipe start
+  xEnd: 230,            // y coords of swipe end
+  yStart: 196,          // y coords of swipe start
+  yEnd: 4               // y coords of swipe end
+}
 ```
 
 ### Configure
