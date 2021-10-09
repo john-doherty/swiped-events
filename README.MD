@@ -63,9 +63,9 @@ The following event data is included with every event and accessible via `e.deta
 ```js
 {
   dir: 'up',            // swipe direction (up,down,left,right)
-  touchType: 'direct',  // touch type (stylus,direct) on iOS stylus=apple pencil and direct=finger
+  touchType: 'direct',  // touch type (stylus,direct) - stylus=apple pencil and direct=finger
   xStart: 196,          // x coords of swipe start
-  xEnd: 230,            // y coords of swipe end
+  xEnd: 230,            // x coords of swipe end
   yStart: 196,          // y coords of swipe start
   yEnd: 4               // y coords of swipe end
 }
