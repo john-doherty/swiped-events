@@ -139,7 +139,7 @@
      */
     function getNearestAttribute(el, attributeName, defaultValue) {
 
-        // walk up the dom tree looking for data-action and data-trigger
+        // walk up the dom tree looking for attributeName
         while (el && el !== document.documentElement) {
 
             var attributeValue = el.getAttribute(attributeName);
