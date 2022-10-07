@@ -75,16 +75,18 @@ The following event data is included with every event and accessible via `e.deta
 
 You can _optionally_ configure how [swiped-events](https://github.com/john-doherty/swiped-events) works using the following HTML attributes:
 
-Attribute              | Description                                              | Type      | Default
----------------------- | -------------------------------------------------------- | --------- | --------
-`data-swipe-threshold` | Number of *pixels* a user must move before swipe fires   | _integer_ | 20
-`data-swipe-timeout`   | Number of *milliseconds* from `touchstart` to `touchend` | _integer_ | 500
-`data-swipe-ignore`    | If *true*, swipe events on this element are ignored      | _boolean_ | _false_
+| Attribute              | Description                                                                          | Type      | Default |
+|------------------------|--------------------------------------------------------------------------------------|-----------|---------|
+| `data-swipe-threshold` | Number of *pixels* or *percent of viewport-axis* a user must move before swipe fires | _integer_ | 20      |
+| `data-swipe-unit`      | *Unit* of the threshold (can be either "px", "vh" or "vw")                           | _string_  | "px"    |
+| `data-swipe-timeout`   | Number of *milliseconds* from `touchstart` to `touchend`                             | _integer_ | 500     |
+| `data-swipe-ignore`    | If *true*, swipe events on this element are ignored                                  | _boolean_ | _false_ |
 
 If you do not provide any attributes, it assumes the following:
 
 ```html
 <div data-swipe-threshold="20"
+     data-swipe-unit="px"
      data-swipe-timeout="500"
      data-swipe-ignore="false">
      Swiper, get swiping!
@@ -94,7 +96,7 @@ If you do not provide any attributes, it assumes the following:
 To set defaults application wide, set config attributes on a parent/topmost element:
 
 ```html
-<body data-swipe-threshold="100" data-swipe-timeout="250">
+<body data-swipe-threshold="50" data-swipe-unit="vw" data-swipe-timeout="250">
     <div>Swipe me</div>
     <div>or me</div>
 </body>
