@@ -45,14 +45,27 @@ export type SwipedEventType = "swiped" | `swiped-${SwipedEventDirection}`;
 
 export type SwipedEvent = Event & { detail: SwipedEventDetail, type: SwipedEventType };
 
+export type SwipedLeftEvent = Event & { detail: SwipedEventDetail, type: "swiped-left" };
+export type SwipedRightEvent = Event & { detail: SwipedEventDetail, type: "swiped-right" };
+export type SwipedUpEvent = Event & { detail: SwipedEventDetail, type: "swiped-up" };
+export type SwipedDownEvent = Event & { detail: SwipedEventDetail, type: "swiped-down" };
+
+export type SwipedEventMap = {
+    "swiped": SwipedEvent,
+    "swiped-left": SwipedLeftEvent,
+    "swiped-right": SwipedRightEvent,
+    "swiped-up": SwipedUpEvent,
+    "swiped-down": SwipedDownEvent
+};
+
 
 declare global {
     interface HTMLElement {
         addEventListener(type: "swiped", callback: ((v: SwipedEvent) => void) | null, options?: boolean | AddEventListenerOptions): void;
-        addEventListener(type: SwipedEventType, callback: ((v: SwipedEvent) => void) | null, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<T extends keyof SwipedEventMap>(type: T, callback: ((v: SwipedEventMap[T]) => void) | null, options?: boolean | AddEventListenerOptions): void;
     }
     interface Window {
         addEventListener(type: "swiped", callback: ((v: SwipedEvent) => void) | null, options?: boolean | AddEventListenerOptions): void;
-        addEventListener(type: SwipedEventType, callback: ((v: SwipedEvent) => void) | null, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<T extends keyof SwipedEventMap>(type: T, callback: ((v: SwipedEventMap[T]) => void) | null, options?: boolean | AddEventListenerOptions): void;
     }
 }
