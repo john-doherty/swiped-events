@@ -41,9 +41,9 @@ export type SwipedEventDetail = {
     fingers: number
 };
 
-export type SwipedEvent = Event & { detail: SwipedEventDetail };
-
 export type SwipedEventType = "swiped" | `swiped-${SwipedEventDirection}`;
+
+export type SwipedEvent = Event & { detail: SwipedEventDetail, type: SwipedEventType };
 
 
 declare global {
