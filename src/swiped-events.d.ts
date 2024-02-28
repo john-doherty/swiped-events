@@ -6,7 +6,7 @@ export type SwipedEventTouchType = "stylus" | "direct";
 /**
  * Event data for a "swiped" event
  */
-export type SwipedEventDetail<D extends SwipedEventDirection> = {
+export type SwipedEventDetail<D extends SwipedEventDirection = SwipedEventDirection> = {
     /**
      * Swipe direction (up, down, left, right)
      */
@@ -43,11 +43,11 @@ export type SwipedEventDetail<D extends SwipedEventDirection> = {
 
 export type SwipedEventType = "swiped" | `swiped-${SwipedEventDirection}`;
 
-export type SwipedEvent = Event & { detail: SwipedEventDetail<SwipedEventDirection>, type: SwipedEventType };
-export type SwipedLeftEvent = Event & { detail: SwipedEventDetail<"left">, type: "swiped-left" };
-export type SwipedRightEvent = Event & { detail: SwipedEventDetail<"right">, type: "swiped-right" };
-export type SwipedUpEvent = Event & { detail: SwipedEventDetail<"up">, type: "swiped-up" };
-export type SwipedDownEvent = Event & { detail: SwipedEventDetail<"down">, type: "swiped-down" };
+export type SwipedEvent = CustomEvent<SwipedEventDetail> & { type: SwipedEventType };
+export type SwipedLeftEvent = CustomEvent<SwipedEventDetail<"left">> & { type: "swiped-left" };
+export type SwipedRightEvent = CustomEvent<SwipedEventDetail<"right">> & { type: "swiped-right" };
+export type SwipedUpEvent = CustomEvent<SwipedEventDetail<"up">> & { type: "swiped-up" };
+export type SwipedDownEvent = CustomEvent<SwipedEventDetail<"down">> & { type: "swiped-down" };
 
 export type SwipedEventMap = {
     "swiped": SwipedEvent,
